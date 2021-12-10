@@ -1,4 +1,4 @@
-const ProjectList = ( { projects, title, handleDelete } ) => {
+const ProjectList = ( { projects, title } ) => {
 
 
     return ( 
@@ -13,7 +13,6 @@ const ProjectList = ( { projects, title, handleDelete } ) => {
                         <h2> { project.location } </h2>
                         <p> InCharge : { project.Incharge } </p>
 
-                        <button onClick={() => handleDelete(project.id)} >Delete project</button>
                     </div>
 
                 )) }
