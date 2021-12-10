@@ -1,0 +1,8 @@
+{
+    "projects": [
+        { "location": "AnnaNagar", "workType": "repaint" , "Approval": "Approved" , "Incharge": "govind", "Incharge_Phone_No": 8765432122, "id": 1 },
+        { "location": "Chromepet", "workType": "Interior-designing" , "Approval": "Approved" , "Incharge": "govind", "Incharge_Phone_No": 8765432122, "id": 2  },
+        { "location": "Adyar", "workType": "houseCoating" , "Approval": "Requesting" , "Incharge": "govind", "Incharge_Phone_No": 8765432122, "id": 3  },
+        { "location": "Adyar", "workType": "TerraceCoating" , "Approval": "Approved" , "Incharge": "govind", "Incharge_Phone_No": 8765432122, "id": 4  }
+    ]
+}
