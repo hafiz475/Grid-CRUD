@@ -6,33 +6,35 @@ const Home = () => {
 
     const [projects, setProjects] = useState( null );
     const [isPending, setIsPending] = useState(true);
+    const [error, SetError] = useState(null);
 
-    const handleDelete = (id) => {
-        const newProject = projects.filter(project => project.id !== id);
-        setProjects(newProject);
-    }
 
     useEffect( () => {
         setTimeout(() => {
             fetch('http://localhost:8000/projects')
             .then(res => { 
-                // console.log(res);
+                if(!res.ok){
+                    throw Error('could find the data for that resourse');
+                }
                 return res.json();
             })
             .then(data => {
                 setProjects(data);
                 setIsPending(false);
+                SetError(null);
             })
             .catch(err => {
-                console.log(err.message);
+                SetError(err.message);
+                setIsPending(false);
             })
-        }, 1000);
+        },  1000);
     }, [] );
 
     return (
         <div className="home">
+            { error && <div>{ error }</div> }
             { isPending && <div>Loading... </div> }
-            { projects && <ProjectList projects = {projects} title ="All Projects!" handleDelete = {handleDelete} />}
+            { projects && <ProjectList projects = {projects} title ="All Projects!" />}
         </div>
      );
 }
